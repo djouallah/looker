@@ -46,7 +46,7 @@ explore: budget {
       sql_on:  ${actual_2.category}=${category_dim_mv.category}  ;;
     }
     join: commodity_dim_mv {
-      type: left_outer
+      type: full_outer
       relationship: many_to_one
       sql_on: ${actual_2.commodity}.commodity} = ${commodity_dim_mv.commodity}  ;;
     }
