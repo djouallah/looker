@@ -63,4 +63,8 @@ view: actual {
     type: count
     drill_fields: [id]
   }
+  measure: Sum_Actual {
+    sql: ${actualhours} ;;
+    type: sum
+  }
 }
