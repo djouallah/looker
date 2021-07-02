@@ -10,26 +10,31 @@ view: actual {
   }
 
   dimension: actualhours {
+    hidden: yes
     type: number
     sql: ${TABLE}.actualhours ;;
   }
 
   dimension: category {
+    hidden: yes
     type: string
     sql: ${TABLE}.category ;;
   }
 
   dimension: commodity {
+    hidden: yes
     type: string
     sql: ${TABLE}.commodity ;;
   }
 
   dimension: contractor {
+    hidden: yes
     type: string
     sql: ${TABLE}.contractor ;;
   }
 
   dimension_group: date {
+    hidden: yes
     type: time
     timeframes: [
       raw,
