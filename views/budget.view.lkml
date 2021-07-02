@@ -33,4 +33,8 @@ view: budget {
     type: count
     drill_fields: [id]
   }
+  measure: Sum_Budget {
+    sql: ${budgethours} ;;
+    type: sum
+  }
 }
