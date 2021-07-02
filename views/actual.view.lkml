@@ -51,7 +51,7 @@ view: actual {
     drill_fields: [id]
   }
   measure: Sum_Actual {
-    sql: ${actualhours} ;;
+    sql:COALESCE( ${actualhours},0) ;;
     type: sum
   }
 }
