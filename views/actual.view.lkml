@@ -44,20 +44,7 @@ view: actual {
     sql: ${TABLE}.date ;;
   }
 
-  dimension_group: year {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.year ;;
-  }
+
 
   measure: count {
     type: count

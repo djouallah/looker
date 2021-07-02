@@ -21,6 +21,11 @@ explore: actual {
     relationship: many_to_one
     sql_on: ${actual.commodity} = ${commodity_dim_mv.commodity}  ;;
   }
+  join: date_dim {
+    type: left_outer
+    relationship: many_to_one
+    sql_on:  ${actual.date_date}=${date_dim.day_date}  ;;
+  }
 }
 explore: budget {
   join: category_dim_mv {
