@@ -58,13 +58,8 @@ explore: budget {
     join: budget {
       type: full_outer
       relationship: many_to_many
-      sql_on:  ${actual_2.commodity}=${budget.commodity}  ;;
+      sql_on:  ${actual_2.commodity}=${budget.commodity} AND ${actual_2.category}=${budget.category}  ;;
     }
-    join: budget_ {
-      from: budget
-      type: full_outer
-      relationship: many_to_many
-      sql_on:  ${actual_2.category}=${budget.category}  ;;
-    }
+
 
 }
