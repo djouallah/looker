@@ -14,11 +14,11 @@ explore: actual {
   join: category_dim_mv {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${category_dim_mv.category} = ${actual.category} ;;
+    sql_on:  ${actual.category}=${category_dim_mv.category}  ;;
   }
   join: commodity_dim_mv {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${commodity_dim_mv.commodity} = ${actual.commodity} ;;
+    sql_on: ${actual.commodity} = ${commodity_dim_mv.commodity}  ;;
   }
 }
