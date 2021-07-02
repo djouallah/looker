@@ -10,26 +10,15 @@ datagroup: multifact_default_datagroup {
 
 persist_with: multifact_default_datagroup
 
-explore: actual {}
-
-
-
-
-
-explore: budget {}
-
-
-
-explore: category_dim_mv {}
-
-
-
-explore: commodity_dim_mv {}
-
-
-
-explore: contractor_dim_mv {}
-
-
-
-explore: date_dim {}
+explore: actual {
+  join: category_dim_mv {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${category_dim_mv.category} = ${actual.category} ;;
+  }
+  join: commodity_dim_mv {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${commodity_dim_mv.commodity} = ${actual.commodity} ;;
+  }
+}
