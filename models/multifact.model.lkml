@@ -37,5 +37,28 @@ explore: budget {
     type: left_outer
     relationship: many_to_one
     sql_on: ${budget.commodity} = ${commodity_dim_mv.commodity}  ;;
-  }
+  }}
+  explore: actual_2 {
+    from: actual
+    join: category_dim_mv {
+      type: left_outer
+      relationship: many_to_one
+      sql_on:  ${actual_2.category}=${category_dim_mv.category}  ;;
+    }
+    join: commodity_dim_mv {
+      type: left_outer
+      relationship: many_to_one
+      sql_on: ${actual_2.commodity}.commodity} = ${commodity_dim_mv.commodity}  ;;
+    }
+    join: date_dim {
+      type: left_outer
+      relationship: many_to_one
+      sql_on:  ${actual_2.date_date}.date_date}=${date_dim.day_date}  ;;
+    }
+    join: budget {
+      type: full_outer
+      relationship: many_to_many
+      sql_on:  ${actual_2.commodity}=${budget.commodity}  ;;
+    }
+
 }
